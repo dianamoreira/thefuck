@@ -12,8 +12,9 @@ Let's take a look:
 <br>
 
 #### Some use cases:
-
-**user$** aptget install java<br>
-_aptget: command not found_<br>
-**user$** fuck<br>
-_apt-get install java_<br>
+```bash
+user$ aptget install java
+aptget: command not found
+user$ fuck
+apt-get install java
+```
