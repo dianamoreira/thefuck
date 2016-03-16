@@ -9,3 +9,11 @@ Let's take a look:
     <img src='https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif' alt='Example' /><br>
   <sup>Image from https://github.com/nvbn/thefuck<sup>
 </figure>
+<br>
+
+#### Some use cases:
+
+**user$** aptget install java<br>
+_aptget: command not found_<br>
+**user$** fuck<br>
+_apt-get install java_<br>
