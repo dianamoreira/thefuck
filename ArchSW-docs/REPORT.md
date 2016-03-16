@@ -6,6 +6,6 @@ Keeping it short and simple, what it does is show us some alternatives to our la
 Let's take a look:
 
 <figure>
-    <img src='https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif' alt='Example' />
+    <img src='https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif' alt='Example' /><br>
   <sup>Image from https://github.com/nvbn/thefuck<sup>
 </figure>
