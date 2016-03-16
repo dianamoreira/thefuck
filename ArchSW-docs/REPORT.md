@@ -7,5 +7,5 @@ Let's take a look:
 
 <figure>
     <img src='https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif' alt='Example' />
-  <sub>Image from https://github.com/nvbn/thefuck<sub>
+  <sup>Image from https://github.com/nvbn/thefuck<sup>
 </figure>
