@@ -107,7 +107,7 @@ wget -O - https://raw.githubusercontent.com/nvbn/thefuck/master/install.sh | sh 
 Install `The Fuck` with `pip`:
 
 ```bash
-sudo pip install thefuck
+sudo -H pip install thefuck
 ```
 
 [Or using an OS package manager (OS X, Ubuntu, Arch).](https://github.com/nvbn/thefuck/wiki/Installation)
@@ -155,17 +155,19 @@ using the matched rule and runs it. Rules enabled by default are as follows:
 * `dry` &ndash; fixes repetitions like `git git push`;
 * `fix_alt_space` &ndash; replaces Alt+Space with Space character;
 * `fix_file` &ndash; opens a file with an error in your `$EDITOR`;
-* `git_add` &ndash; fixes *"Did you forget to 'git add'?"*;
+* `git_add` &ndash; fixes *"pathspec 'foo' did not match any file(s) known to git."*;
 * `git_branch_delete` &ndash; changes `git branch -d` to `git branch -D`;
 * `git_branch_list` &ndash; catches `git branch list` in place of `git branch` and removes created branch;
 * `git_checkout` &ndash; fixes branch name or creates new branch;
 * `git_diff_staged` &ndash; adds `--staged` to previous `git diff` with unexpected output;
 * `git_fix_stash` &ndash; fixes `git stash` commands (misspelled subcommand and missing `save`);
+* `git_help_aliased` &ndash; fixes `git help <alias>` commands replacing <alias> with the aliased command;
 * `git_not_command` &ndash; fixes wrong git commands like `git brnch`;
 * `git_pull` &ndash; sets upstream before executing previous `git pull`;
 * `git_pull_clone` &ndash; clones instead of pulling when the repo does not exist;
 * `git_push` &ndash; adds `--set-upstream origin $branch` to previous failed `git push`;
 * `git_push_pull` &ndash; runs `git pull` when `push` was rejected;
+* `git_rm_recursive` &ndash; adds `-r` when you try to `rm` a directory;
 * `git_remote_seturl_add` &ndash; runs `git remote add` when `git remote set_url` on nonexistant remote;
 * `git_stash` &ndash; stashes you local modifications before rebasing or switching branch;
 * `git_two_dashes` &ndash; adds a missing dash to commands like `git commit -amend` or `git rebase -continue`;

@@ -1,3 +1,4 @@
+import os
 import sys
 import msvcrt
 import win_unicode_console
@@ -16,10 +17,11 @@ def get_key():
         ch = msvcrt.getch()  # second call returns the actual key code
 
     if ch == b'\x03':
-        raise const.KEY_CTRL_C
+        return const.KEY_CTRL_C
     if ch == b'H':
         return const.KEY_UP
     if ch == b'P':
         return const.KEY_DOWN
 
-    return ch.decode(sys.stdout.encoding)
+    encoding = sys.stdout.encoding or os.environ.get('PYTHONIOENCODING', 'utf-8')
+    return ch.decode(encoding)

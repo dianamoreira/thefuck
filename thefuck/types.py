@@ -114,7 +114,7 @@ class Command(object):
         env.update(settings.env)
 
         with logs.debug_time(u'Call: {}; with env: {};'.format(script, env)):
-            result = Popen(script, shell=True, stdout=PIPE, stderr=PIPE, env=env)
+            result = Popen(script, shell=True, stdin=PIPE, stdout=PIPE, stderr=PIPE, env=env)
             if cls._wait_output(result):
                 stdout = result.stdout.read().decode('utf-8')
                 stderr = result.stderr.read().decode('utf-8')
@@ -282,5 +282,5 @@ class CorrectedCommand(object):
             compatibility_call(self.side_effect, old_cmd, self.script)
         # This depends on correct setting of PYTHONIOENCODING by the alias:
         logs.debug(u'PYTHONIOENCODING: {}'.format(
-            os.environ.get('PYTHONIOENCODING', '>-not-set-<')))
+            os.environ.get('PYTHONIOENCODING', '!!not-set!!')))
         print(self.script)
