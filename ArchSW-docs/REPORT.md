@@ -18,3 +18,7 @@ aptget: command not found
 user$ fuck
 apt-get install java
 ```
+
+## Prerequisites
+This program requires Python with [pip](https://pypi.python.org/pypi/pip) installed. On UNIX, it's necessary to have `python-dev`. On Windows you may need a shell with alias support such as the `bash` shell from the [mingw](www.mingw.org).
+We recommend the [cmder](www.cmder.net) console emulator on Windows.
