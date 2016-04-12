@@ -1,10 +1,10 @@
-# The Fuck [![Build Status](https://travis-ci.org/nvbn/thefuck.svg?branch=master)](https://travis-ci.org/nvbn/thefuck) 
+# The Fuck [![Version][version-badge]][version-link] [![Build Status][travis-badge]][travis-link] [![Windows Build Status][appveyor-badge]][appveyor-link] [![Coverage][coverage-badge]][coverage-link] [![MIT License][license-badge]](LICENSE.md)
 
 Magnificent app which corrects your previous console command,
 inspired by a [@liamosaur](https://twitter.com/liamosaur/)
 [tweet](https://twitter.com/liamosaur/status/506975850596536320).
 
-[![gif with examples](https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif)](https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif)
+[![gif with examples][examples-link]][examples-link]
 
 Few more examples:
 
@@ -52,7 +52,7 @@ Python 3.4.2 (default, Oct  8 2014, 13:08:17)
 git: 'brnch' is not a git command. See 'git --help'.
 
 Did you mean this?
-	branch
+    branch
 
 ➜ fuck
 git branch [enter/↑/↓/ctrl+c]
@@ -97,7 +97,7 @@ Reading package lists... Done
 ## Installation [*experimental*]
 
 On Ubuntu and OS X you can install `The Fuck` with installation script:
- 
+
 ```bash
 wget -O - https://raw.githubusercontent.com/nvbn/thefuck/master/install.sh | sh - && $0
 ```
@@ -144,6 +144,7 @@ using the matched rule and runs it. Rules enabled by default are as follows:
 * `cd_correction` &ndash; spellchecks and correct failed cd commands;
 * `cd_mkdir` &ndash; creates directories before cd'ing into them;
 * `cd_parent` &ndash; changes `cd..` to `cd ..`;
+* `chmod_x` &ndash; add execution bit;
 * `composer_not_command` &ndash; fixes composer command name;
 * `cp_omitting_directory` &ndash; adds `-a` when you `cp` directory;
 * `cpp11` &ndash; adds missing `-std=c++11` to `g++` or `clang++`;
@@ -157,6 +158,7 @@ using the matched rule and runs it. Rules enabled by default are as follows:
 * `fix_file` &ndash; opens a file with an error in your `$EDITOR`;
 * `git_add` &ndash; fixes *"pathspec 'foo' did not match any file(s) known to git."*;
 * `git_branch_delete` &ndash; changes `git branch -d` to `git branch -D`;
+* `git_branch_exists` &ndash; offers `git branch -d foo`, `git branch -D foo` or `git checkout foo` when creating a branch that already exists;
 * `git_branch_list` &ndash; catches `git branch list` in place of `git branch` and removes created branch;
 * `git_checkout` &ndash; fixes branch name or creates new branch;
 * `git_diff_staged` &ndash; adds `--staged` to previous `git diff` with unexpected output;
@@ -306,7 +308,7 @@ debug = False
 Or via environment variables:
 
 * `THEFUCK_RULES` &ndash; list of enabled rules, like `DEFAULT_RULES:rm_root` or `sudo:no_command`;
-* `THEFUCK_EXCLUDE_RULES` &ndash; list of disabled rules, like `git_pull:git_push`; 
+* `THEFUCK_EXCLUDE_RULES` &ndash; list of disabled rules, like `git_pull:git_push`;
 * `THEFUCK_REQUIRE_CONFIRMATION` &ndash; require confirmation before running new command, `true/false`;
 * `THEFUCK_WAIT_COMMAND` &ndash; max amount of time in seconds for getting previous command output;
 * `THEFUCK_NO_COLORS` &ndash; disable colored output, `true/false`;
@@ -358,3 +360,15 @@ sudo apt-get install pandoc
 
 ## License MIT
 Project License can be found [here](LICENSE.md).
+
+
+[version-badge]:   https://img.shields.io/pypi/v/thefuck.svg?label=version
+[version-link]:    https://pypi.python.org/pypi/thefuck/
+[travis-badge]:    https://img.shields.io/travis/nvbn/thefuck.svg
+[travis-link]:     https://travis-ci.org/nvbn/thefuck
+[appveyor-badge]:  https://img.shields.io/appveyor/ci/nvbn/thefuck.svg?label=windows%20build
+[appveyor-link]:   https://ci.appveyor.com/project/nvbn/thefuck
+[coverage-badge]:  https://img.shields.io/coveralls/nvbn/thefuck.svg
+[coverage-link]:   https://coveralls.io/github/nvbn/thefuck
+[license-badge]:   https://img.shields.io/badge/license-MIT-007EC7.svg
+[examples-link]:   https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif
