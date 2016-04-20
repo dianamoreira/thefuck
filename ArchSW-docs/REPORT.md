@@ -32,3 +32,9 @@ The creator of the app gives the possibility of other people being able to contr
 ## Software Architecture
 _**4+1 architectural view model**_ describes the architecture of software-intensive systems, based on the use of multiple views. The views are used to describe the viewpoint of different stakeholders, such as end-users, programmers, software managers, integrator and system engineer.
 There are 5 views, each is a set of specific objectives of the project, according to the different stakeholders, **Logical View**, **Development View**, **Process View**, **Physical View** and **Scenarios**.
+
+
+### Logical View
+
+![LogicalDiagram](/ArchSW-docs/Diagrams/LogicalView.png)
+
