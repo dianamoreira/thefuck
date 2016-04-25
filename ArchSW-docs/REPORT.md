@@ -36,5 +36,7 @@ There are 5 views, each is a set of specific objectives of the project, accordin
 
 ### Logical View
 
+This view describes an application’s functionality in terms of structural elements, key abstractions and mechanisms, separation of concerns and distribution of responsibilities. The end result should be a mapping of the functionality in components that provide that functionality. For this system, we'll use the [package diagram](http://www.agilemodeling.com/artifacts/packageDiagram.htm) below to describe the dependencies between the main components of the code.
+
 ![LogicalDiagram](/ArchSW-docs/Diagrams/LogicalView.png)
 
