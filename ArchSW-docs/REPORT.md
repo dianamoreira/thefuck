@@ -7,10 +7,12 @@
 - [Contributions](#contributions)
 - [Software Architecture](#software-architecture)
 	- [Logical View](#logical-view)
+	- [Process View](#process-view)
 
 
 ##Description
 _**The Fuck**_ is a handy tool that allow its users to easily understand what went wrong with their console command. Keeping it short and simple, what it does is show us some alternatives to our last terminal input, (tries to match a rule for the previous command, creates a new command using the matched rule and runs it), and allowing us to make our own rules also.
+
 This project was created on GitHub in April 2015 and in total there are over 70 contributors, although only three have been active during this year (2016). Its creator is Vladimir Yakovlev, whose nickname is "nvbn" which, along with two others, Martin Carton ("mcarton") and Pablo Aguiar ("scorphus") constitute the principal nucleus of the app development. According Vladimir Iakovlev, was inspired by a [@liamosaur](https://twitter.com/liamosaur/) [tweet](https://twitter.com/liamosaur/status/506975850596536320).
 
 
@@ -59,3 +61,10 @@ So, we organize *The Fuck* in the following packages and single modules:
   - **_corrector.py_** - matches all enabled rules from rules package against current command and return all available corrected commands.
   - **_specific_** - utility functions to help matching specific rules. Provides information about existence of `apt-get ` or ArchLinux `pacman`, for instance, and predicts a fix for the command.
   - **_system_** - decides which terminal encoding to use and how to recognize key up/down movements in `unix` and `Windows`.
+ 
+
+### Process View
+
+This view derives from the Logical view the concurrency and synchronization mechanisms underlying the software product. Has the objective to offer provide a basis for understanding the process organization of the system.
+
+The process view works with the dynamic aspects of the system, explains the system processes and how they communicate, and focuses on system runtime behavior. For this system, we'll use the [activity diagram](http://www.agilemodeling.com/artifacts/activityDiagram.htm) to show the software flow, data flow and control, from one activity to another as this to be used.
