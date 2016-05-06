@@ -56,11 +56,20 @@ So, we organize *The Fuck* in the following packages and single modules:
   - **_rules_** - contains rules enabled by default. Each rule is a special module with two functions:
     * `match(command)` - True when rule matched;
     * `get_new_command(command)` - return a list of fixed commands.
-  - **_shells_** - converts shell specific command to `sh` compatible version, expands aliases and environment variable.
-  - **_ui.py_** - allows to choose from a list of corrected commands with arrow keys, approve selection with `Enter` or dismiss it with `Ctrl+C` 
-  - **_corrector.py_** - matches all enabled rules from rules package against current command and return all available corrected commands.
   - **_specific_** - utility functions to help matching specific rules. Provides information about existence of `apt-get ` or ArchLinux `pacman`, for instance, and predicts a fix for the command.
+  - **_shells_** - converts shell specific command to `sh` compatible version, expands aliases and environment variable.
   - **_system_** - decides which terminal encoding to use and how to recognize key up/down movements in `unix` and `Windows`.
+  - **_conf.py_** - configure the settings.
+  - **_utils.py_** - define the necessary auxiliary functions for developing the program.
+  - **_corrector.py_** - matches all enabled rules from rules package against current command and return all available corrected commands. 
+  - **_logs.py_** - deals with internal errors.
+  - **_ui.py_** - allows to choose from a list of corrected commands with arrow keys, approve selection with `Enter` or dismiss it with `Ctrl+C`. 
+  - **_types.py_** - it's distributed in three classes:
+    * `Command(object)` - parser of commands;
+    * `Rule(object)` - inicializes rule with given fields;
+    * `CorrectedCommand(object)` - run command from chosen rule by user.
+  - **_const.py_** - initializes through global variables the default options.
+  - **_exceptions.py_** - displays an error message when the user enters a command that is not found.
  
 
 ### Process View
