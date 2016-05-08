@@ -50,7 +50,7 @@ There are 5 views, each is a set of specific objective  s of the project, accord
 
 This view is designed to address the end user's concerns regarding the system's insurance of their functional requirements. As such, it provides a basis for understanding the structure and organization of the design of the system. The end result should be a mapping of the functionality in components that provide that functionality. For this system, we'll use the [package diagram](http://www.agilemodeling.com/artifacts/packageDiagram.htm) below to describe the dependencies between the main components of the code.
 
-![LogicalDiagram](/ArchSW-docs/Diagrams/LogicalView.png)
+![LogicalDiagram](/ArchSW-docs/Diagrams/PackageDiagram.png)
 
 So, we organize *The Fuck* in the following packages and single modules:
   - **_rules_** - contains rules enabled by default. Each rule is a special module with two functions:
