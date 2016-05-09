@@ -81,3 +81,5 @@ The **Aux** package contains the following modules:
 This view derives from the Logical view the concurrency and synchronization mechanisms underlying the software product. Has the objective to provide a basis for understanding the process organization of the system.
 
 The process view works with the dynamic aspects of the system, explains the system processes and how they communicate, and focuses on system runtime behavior. For this system, we'll use the [activity diagram](http://www.agilemodeling.com/artifacts/activityDiagram.htm) to show the data flow and control, from one activity to another, when executed from the client side (since this is the most relevant aspect of the system).
+
+![ProcessDiagram](/ArchSW-docs/Diagrams/process.png)
