@@ -3,6 +3,7 @@
 
 **Contents**
 - [Description](#description)
+	- [Some use cases](#some-use-cases)
 - [Prerequisites](#prerequisites)
 - [Contributions](#contributions)
 - [Software Architecture](#software-architecture)
@@ -59,21 +60,24 @@ So, we organize *The Fuck* in the following packages and single modules:
   - **_specific_** - utility functions to help matching specific rules. Provides information about existence of `apt-get ` or ArchLinux `pacman`, for instance, and predicts a fix for the command.
   - **_shells_** - converts shell specific command to `sh` compatible version, expands aliases and environment variable.
   - **_system_** - decides which terminal encoding to use and how to recognize key up/down movements in `unix` and `Windows`.
-  - **_conf.py_** - configure the settings.
-  - **_utils.py_** - define the necessary auxiliary functions for developing the program.
+  - **_Aux_** - auxiliary modules that deal with the program settings, errors, global variables, etc. We grouped these modules in a virtual package in order to make the diagram easier to understand.
   - **_corrector.py_** - matches all enabled rules from rules package against current command and return all available corrected commands. 
-  - **_logs.py_** - deals with internal errors.
   - **_ui.py_** - allows to choose from a list of corrected commands with arrow keys, approve selection with `Enter` or dismiss it with `Ctrl+C`. 
   - **_types.py_** - it's distributed in three classes:
     * `Command(object)` - parser of commands;
     * `Rule(object)` - inicializes rule with given fields;
     * `CorrectedCommand(object)` - run command from chosen rule by user.
+
+The **Aux** package contains the following modules:
+  - **_conf.py_** - configure the settings.
+  - **_utils.py_** - define the necessary auxiliary functions for developing the program.
+  - **_logs.py_** - deals with internal errors.
   - **_const.py_** - initializes through global variables the default options.
   - **_exceptions.py_** - displays an error message when the user enters a command that is not found.
  
 
 ### Process View
 
-This view derives from the Logical view the concurrency and synchronization mechanisms underlying the software product. Has the objective to offer provide a basis for understanding the process organization of the system.
+This view derives from the Logical view the concurrency and synchronization mechanisms underlying the software product. Has the objective to provide a basis for understanding the process organization of the system.
 
-The process view works with the dynamic aspects of the system, explains the system processes and how they communicate, and focuses on system runtime behavior. For this system, we'll use the [activity diagram](http://www.agilemodeling.com/artifacts/activityDiagram.htm) to show the software flow, data flow and control, from one activity to another as this to be used.
+The process view works with the dynamic aspects of the system, explains the system processes and how they communicate, and focuses on system runtime behavior. For this system, we'll use the [activity diagram](http://www.agilemodeling.com/artifacts/activityDiagram.htm) to show the data flow and control, from one activity to another, when executed from the client side (since this is the most relevant aspect of the system).
