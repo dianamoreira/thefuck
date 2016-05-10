@@ -89,5 +89,5 @@ What happens in between?
 
 Well, first of all, the alias is loaded (it can be _fuck_ or it can be whatever the user wants), and then, whenever there is a broken command (invalid command), the user has the option of not doing anything about it, and try again, or it can type _fuck_  (or, as mentioned before, any other alias picked by the user), and the available options will be displayed to the user. The user can either pick one, or discard them. If he chooses to accept any of the commands, the command will be executed and he will be back in the shell prompt. If he doesn't accept any of the options displayed, nothing will happen and he will be back in the shell prompt.
 
-Also, since _the fuck_ is a very configurable app, it allows it's users to easily make their own rules. And that's where **setting.py** comes in. The user can change to make the program fit it's own needs, and even help the community by improving it.
+Also, since _the fuck_ is a very configurable app, it allows it's users to easily make their own rules. And that's where **settings.py** comes in. The user can change it to make the program fit it's own needs, and even help the community by improving it.
 
