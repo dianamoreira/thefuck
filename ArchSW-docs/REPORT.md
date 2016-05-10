@@ -83,3 +83,11 @@ This view derives from the Logical view the concurrency and synchronization mech
 The process view works with the dynamic aspects of the system, explains the system processes and how they communicate, and focuses on system runtime behavior. For this system, we'll use the [activity diagram](http://www.agilemodeling.com/artifacts/activityDiagram.htm) to show the data flow and control, from one activity to another, when executed from the client side (since this is the most relevant aspect of the system).
 
 ![ProcessDiagram](/ArchSW-docs/Diagrams/process.png)
+
+How _the fuck_ works is really simple. What it does is it basically detects a broken command and in whatever shell you are in (as long as it supports alias), a rule is matched, and then some command options are displayed to the user. The user only has to pick whichever it fits what he wants and there it is, the command is fixed.
+What happens in between? 
+
+Well, first of all, the alias is loaded (it can be _fuck_ or it can be whatever the user wants), and then, whenever there is a broken command (invalid command), the user has the option of not doing anything about it, and try again, or it can type _fuck_  (or, as mentioned before, any other alias picked by the user), and the available options will be displayed to the user. The user can either pick one, or discard them. If he chooses to accept any of the commands, the command will be executed and he will be back in the shell prompt. If he doesn't accept any of the options displayed, nothing will happen and he will be back in the shell prompt.
+
+Also, since _the fuck_ is a very configurable app, it allows it's users to easily make their own rules. And that's where **setting.py** comes in. The user can change to make the program fit it's own needs, and even help the community by improving it.
+
