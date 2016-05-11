@@ -9,6 +9,7 @@
 - [Software Architecture](#software-architecture)
 	- [Logical View](#logical-view)
 	- [Process View](#process-view)
+	- [Development View](#process-view)
 
 
 ##Description
@@ -49,9 +50,29 @@ There are 5 views, each is a set of specific objective  s of the project, accord
 
 ### Logical View
 
-This view is designed to address the end user's concerns regarding the system's insurance of their functional requirements. As such, it provides a basis for understanding the structure and organization of the design of the system. The end result should be a mapping of the functionality in components that provide that functionality. For this system, we'll use the [package diagram](http://www.agilemodeling.com/artifacts/packageDiagram.htm) below to describe the dependencies between the main components of the code.
+This view is designed to address the end user's concerns regarding the system's insurance of their functional requirements. As such, it provides a basis for understanding the structure and organization of the design of the system. The end result should be a mapping of the functionality in components that provide that functionality. 
+ 
 
-![LogicalDiagram](/ArchSW-docs/Diagrams/PackageDiagram.png)
+### Process View
+
+This view derives from the Logical view the concurrency and synchronization mechanisms underlying the software product. Has the objective to provide a basis for understanding the process organization of the system.
+
+The process view works with the dynamic aspects of the system, explains the system processes and how they communicate, and focuses on system runtime behavior. For this system, we'll use the [activity diagram](http://www.agilemodeling.com/artifacts/activityDiagram.htm) to show the data flow and control, from one activity to another, when executed from the client side (since this is the most relevant aspect of the system).
+
+![ProcessDiagram](/ArchSW-docs/Diagrams/process.png)
+
+How _the fuck_ works is really simple. What it does is it basically detects a broken command and in whatever shell you are in (as long as it supports alias), a rule is matched, and then some command options are displayed to the user. The user only has to pick whichever it fits what he wants and there it is, the command is fixed.
+What happens in between? 
+
+Well, first of all, the alias is loaded (it can be _fuck_ or it can be whatever the user wants), and then, whenever there is a broken command (invalid command), the user has the option of not doing anything about it, and try again, or it can type _fuck_  (or, as mentioned before, any other alias picked by the user), and the available options will be displayed to the user. The user can either pick one, or discard them. If he chooses to accept any of the commands, the command will be executed and he will be back in the shell prompt. If he doesn't accept any of the options displayed, nothing will happen and he will be back in the shell prompt.
+
+Also, since _the fuck_ is a very configurable app, it allows it's users to easily make their own rules. And that's where **settings.py** comes in. The user can change it to make the program fit it's own needs, and even help the community by improving it.
+
+### Development View
+
+This view, also known as **Implementation View**, focuses on configuration management and internal organization of the software components in the development environment. For this system, we'll use the [package diagram](http://www.agilemodeling.com/artifacts/packageDiagram.htm) below to describe the dependencies between the main components of the code.
+
+![DevelopmentDiagram](/ArchSW-docs/Diagrams/PackageDiagram.png)
 
 So, we organize *The Fuck* in the following packages and single modules:
   - **_rules_** - contains rules enabled by default. Each rule is a special module with two functions:
@@ -74,20 +95,3 @@ The **Aux** package contains the following modules:
   - **_logs.py_** - deals with internal errors.
   - **_const.py_** - initializes through global variables the default options.
   - **_exceptions.py_** - displays an error message when the user enters a command that is not found.
- 
-
-### Process View
-
-This view derives from the Logical view the concurrency and synchronization mechanisms underlying the software product. Has the objective to provide a basis for understanding the process organization of the system.
-
-The process view works with the dynamic aspects of the system, explains the system processes and how they communicate, and focuses on system runtime behavior. For this system, we'll use the [activity diagram](http://www.agilemodeling.com/artifacts/activityDiagram.htm) to show the data flow and control, from one activity to another, when executed from the client side (since this is the most relevant aspect of the system).
-
-![ProcessDiagram](/ArchSW-docs/Diagrams/process.png)
-
-How _the fuck_ works is really simple. What it does is it basically detects a broken command and in whatever shell you are in (as long as it supports alias), a rule is matched, and then some command options are displayed to the user. The user only has to pick whichever it fits what he wants and there it is, the command is fixed.
-What happens in between? 
-
-Well, first of all, the alias is loaded (it can be _fuck_ or it can be whatever the user wants), and then, whenever there is a broken command (invalid command), the user has the option of not doing anything about it, and try again, or it can type _fuck_  (or, as mentioned before, any other alias picked by the user), and the available options will be displayed to the user. The user can either pick one, or discard them. If he chooses to accept any of the commands, the command will be executed and he will be back in the shell prompt. If he doesn't accept any of the options displayed, nothing will happen and he will be back in the shell prompt.
-
-Also, since _the fuck_ is a very configurable app, it allows it's users to easily make their own rules. And that's where **settings.py** comes in. The user can change it to make the program fit it's own needs, and even help the community by improving it.
-
