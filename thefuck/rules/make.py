@@ -34,4 +34,4 @@ def get_new_command(command):
         if res:
             possibilities.append(res.group(0).split(":")[0])
 
-    return get_closest(badrule, possibilities, 5)
+    return ['make ' + get_closest(badrule, possibilities, 5)]
