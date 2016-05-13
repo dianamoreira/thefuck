@@ -9,7 +9,10 @@
 - [Software Architecture](#software-architecture)
 	- [Logical View](#logical-view)
 	- [Process View](#process-view)
-	- [Development View](#process-view)
+	- [Development View](#development-view)
+	- [Physical View](#physical-view)
+	- [Scenarios](#scenarios)
+
 
 
 ##Description
@@ -68,9 +71,10 @@ Well, first of all, the alias is loaded (it can be _fuck_ or it can be whatever 
 
 Also, since _the fuck_ is a very configurable app, it allows it's users to easily make their own rules. And that's where **settings.py** comes in. The user can change it to make the program fit it's own needs, and even help the community by improving it.
 
+
 ### Development View
 
-This view, also known as **Implementation View**, focuses on configuration management and internal organization of the software components in the development environment. For this system, we'll use the [package diagram](http://www.agilemodeling.com/artifacts/packageDiagram.htm) below to describe the dependencies between the main components of the code.
+This view, also known as **Implementation View**, illustrates a system from a programmer's perspective and focuses on configuration management and internal organization of the software components in the development environment. For this system, we'll use the [package diagram](http://www.agilemodeling.com/artifacts/packageDiagram.htm) below to describe the dependencies between the main components of the code.
 
 ![DevelopmentDiagram](/ArchSW-docs/Diagrams/PackageDiagram.png)
 
@@ -95,3 +99,19 @@ The **Aux** package contains the following modules:
   - **_logs.py_** - deals with internal errors.
   - **_const.py_** - initializes through global variables the default options.
   - **_exceptions.py_** - displays an error message when the user enters a command that is not found.
+
+
+### Physical View
+
+This view, also known as **Deployment View**, is concerned with the topology of software components on the physical layer, as well as the physical connections between them. Makes the mapping the software to the hardware.
+
+For this system, we'll use the [deployment diagram](http://www.agilemodeling.com/artifacts/deploymentDiagram.htm) to show what hardware components ("nodes") exist, what software components ("artifacts") run on each node, and how the different pieces are connected.
+
+
+### Scenarios
+
+The use cases or scenarios, as it is also known, connects all the views described above.
+
+In this view we can analyze the sequences of interactions between objects (in this case the user), and between the different processes. It helps to identify architectural elements and illustrate and validate the architecture design. It also helps the architect during the architecture design.
+
+For this system, we'll use the [use case diagrams](http://www.agilemodeling.com/artifacts/useCaseDiagram.htm) to represent a user's interaction with the system, showing the relationship between the user and the different use cases.
