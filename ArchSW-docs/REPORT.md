@@ -54,7 +54,8 @@ There are 5 views, each is a set of specific objective  s of the project, accord
 ### Logical View
 
 This view is designed to address the end user's concerns regarding the system's insurance of their functional requirements. As such, it provides a basis for understanding the structure and organization of the design of the system. The end result should be a mapping of the functionality in components that provide that functionality. 
- 
+
+![LogicalDiagram](/ArchSW-docs/Diagrams/logical.png)
 
 ### Process View
 
