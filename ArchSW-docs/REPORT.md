@@ -57,6 +57,9 @@ This view is designed to address the end user's concerns regarding the system's 
 
 ![LogicalDiagram](/ArchSW-docs/Diagrams/logical.png)
 
+When the user calls the program, after entering a broken command, `thefuck` initializes its settings and converts shell specific (broken) command (i.e. mistyped command) to shell agnostic version. The opposite process is made with _fixed command_.
+Then, corrector matches all enabled rules against shell agnostic command, generates a list of correct commands sorted by priority (similarity) and displays them with UI. The user can, at this point, choose one of the available corrected commands with arrow keys and approve selection with `enter`, or dismiss it with `Ctrl+C`.
+
 ### Process View
 
 This view derives from the Logical view the concurrency and synchronization mechanisms underlying the software product. Has the objective to provide a basis for understanding the process organization of the system.
@@ -65,12 +68,11 @@ The process view works with the dynamic aspects of the system, explains the syst
 
 ![ProcessDiagram](/ArchSW-docs/Diagrams/process.png)
 
-How _the fuck_ works is really simple. What it does is it basically detects a broken command and in whatever shell you are in (as long as it supports alias), a rule is matched, and then some command options are displayed to the user. The user only has to pick whichever it fits what he wants and there it is, the command is fixed.
-What happens in between? 
+The behavior of "the fuck" is intuitive, and is described as follows. What it does is it basically detects a broken command and in whatever shell you are in (as long as it supports alias), a rule is matched, and then some command options are displayed to the user. The user only has to pick whichever it fits what he wants and there it is, the command is fixed.
 
-Well, first of all, the alias is loaded (it can be _fuck_ or it can be whatever the user wants), and then, whenever there is a broken command (invalid command), the user has the option of not doing anything about it, and try again, or it can type _fuck_  (or, as mentioned before, any other alias picked by the user), and the available options will be displayed to the user. The user can either pick one, or discard them. If he chooses to accept any of the commands, the command will be executed and he will be back in the shell prompt. If he doesn't accept any of the options displayed, nothing will happen and he will be back in the shell prompt.
+In more detail, the alias is loaded (it can be _fuck_ or it can be whatever the user wants), and then, whenever there is a broken command (invalid command), the user has the option of not doing anything about it, and try again, or it can type _fuck_  (or, as mentioned before, any other alias picked by the user), and the available options will be displayed to the user. The user can either pick one, or discard them. If he chooses to accept any of the commands, the command will be executed and he will be back in the shell prompt. If he doesn't accept any of the options displayed, nothing will happen and he will be back in the shell prompt.
 
-Also, since _the fuck_ is a very configurable app, it allows it's users to easily make their own rules. And that's where **settings.py** comes in. The user can change it to make the program fit it's own needs, and even help the community by improving it.
+Also, since _the fuck_ is a very configurable app, it allows the user to easily change a few settings parameters. And that's where **settings.py** comes in. For example, the user can change the list of enabled rules, disable the colored output, require confirmation before running new command (`True` by default), among others. 
 
 
 ### Development View
