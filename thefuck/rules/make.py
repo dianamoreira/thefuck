@@ -18,7 +18,7 @@ def get_new_command(command):
     if len(command.script_parts) <= 1:
         return []
 
-    badrule = command.script_parts[1]
+    badrule = command.stderr.split("`")[1].split("'")[0]
 
     from subprocess import call, Popen, PIPE
 
@@ -34,4 +34,4 @@ def get_new_command(command):
         if res:
             possibilities.append(res.group(0).split(":")[0])
 
-    return ['make ' + get_closest(badrule, possibilities, 5)]
+    return [" ".join(command.script_parts).replace(badrule, get_closest(badrule, possibilities, 5))]
