@@ -118,3 +118,5 @@ The use cases or scenarios, as it is also known, connects all the views describe
 In this view we can analyze the sequences of interactions between objects (in this case the user), and between the different processes. It helps to identify architectural elements and illustrate and validate the architecture design. It also helps the architect during the architecture design.
 
 For this system, we'll use the [use case diagrams](http://www.agilemodeling.com/artifacts/useCaseDiagram.htm) to represent a user's interaction with the system, showing the relationship between the user and the different use cases.
+
+![UseCaseDiagram](/ArchSW-docs/Diagrams/usecase.png)
