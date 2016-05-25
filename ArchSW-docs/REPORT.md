@@ -57,7 +57,7 @@ This view is designed to address the end user's concerns regarding the system's 
 
 ![LogicalDiagram](/ArchSW-docs/Diagrams/logical.png)
 
-When the user calls the program, after entering a broken command, `thefuck` initializes its settings and converts shell specific (broken) command (i.e. mistyped command) to shell agnostic version. The opposite process is made with _fixed command_.
+When the user calls the program, after entering a broken command, _**The Fuck**_ initializes its settings and converts shell specific (broken) command (i.e. mistyped command) to shell agnostic version. The opposite process is made with _fixed command_.
 Then, corrector matches all enabled rules against shell agnostic command, generates a list of correct commands sorted by priority (similarity) and displays them with UI. The user can, at this point, choose one of the available corrected commands with arrow keys and approve selection with `enter`, or dismiss it with `Ctrl+C`.
 
 ### Process View
@@ -68,11 +68,11 @@ The process view works with the dynamic aspects of the system, explains the syst
 
 ![ProcessDiagram](/ArchSW-docs/Diagrams/process.png)
 
-The behavior of "the fuck" is intuitive, and is described as follows. What it does is it basically detects a broken command and in whatever shell you are in (as long as it supports alias), a rule is matched, and then some command options are displayed to the user. The user only has to pick whichever it fits what he wants and there it is, the command is fixed.
+The behavior of _**The Fuck**_ is intuitive, and is described as follows. What it does is it basically detects a broken command and in whatever shell you are in (as long as it supports alias), a rule is matched, and then some command options are displayed to the user. The user only has to pick whichever it fits what he wants and there it is, the command is fixed.
 
 In more detail, the alias is loaded (it can be _fuck_ or it can be whatever the user wants), and then, whenever there is a broken command (invalid command), the user has the option of not doing anything about it, and try again, or it can type _fuck_  (or, as mentioned before, any other alias picked by the user), and the available options will be displayed to the user. The user can either pick one, or discard them. If he chooses to accept any of the commands, the command will be executed and he will be back in the shell prompt. If he doesn't accept any of the options displayed, nothing will happen and he will be back in the shell prompt.
 
-Also, since _the fuck_ is a very configurable app, it allows the user to easily change a few settings parameters. And that's where **settings.py** comes in. For example, the user can change the list of enabled rules, disable the colored output, require confirmation before running new command (`True` by default), among others. 
+Also, since _**The Fuck**_ is a very configurable app, it allows the user to easily change a few settings parameters. And that's where **settings.py** comes in. For example, the user can change the list of enabled rules, disable the colored output, require confirmation before running new command (`True` by default), among others. 
 
 
 ### Development View
@@ -81,7 +81,7 @@ This view, also known as **Implementation View**, illustrates a system from a pr
 
 ![DevelopmentDiagram](/ArchSW-docs/Diagrams/PackageDiagram.png)
 
-So, we organize *The Fuck* in the following packages and single modules:
+So, we organize _**The Fuck**_ in the following packages and single modules:
   - **_rules_** - contains rules enabled by default. Each rule is a special module with two functions:
     * `match(command)` - True when rule matched;
     * `get_new_command(command)` - return a list of fixed commands.
@@ -109,6 +109,9 @@ The **Aux** package contains the following modules:
 This view, also known as **Deployment View**, is concerned with the topology of software components on the physical layer, as well as the physical connections between them. Makes the mapping the software to the hardware.
 
 For this system, we'll use the [deployment diagram](http://www.agilemodeling.com/artifacts/deploymentDiagram.htm) to show what hardware components ("nodes") exist, what software components ("artifacts") run on each node, and how the different pieces are connected.
+
+
+To start _**The Fuck**_ the client only needs a computer carrier of any operating system is the prerequisite is only contain a `bash`. In this way, the interaction with `bash` gives rise to two "artifacts": the system through the user interface (`UI`) itself when it want/need can run the application, after having properly installed, and the corrector with the help of some rules already solves the problem posed by it.
 
 
 ### Scenarios
