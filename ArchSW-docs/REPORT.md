@@ -113,11 +113,9 @@ To start  _**The Fuck**_, the client requires only a computer running an operati
 
 ### Scenarios
 
-The use cases or scenarios, as it is also known, connects all the views described above.
+The scenarios, or use cases, describe the possible interactions between user and system (different processes). In particular, it allows for validating all the following system views, with respect to compliance regarding the proposed functionalities.
 
-In this view we can analyze the sequences of interactions between objects (in this case the user), and between the different processes. It helps to identify architectural elements and illustrate and validate the architecture design. It also helps the architect during the architecture design.
-
-For this system, we'll use the [use case diagrams](http://www.agilemodeling.com/artifacts/useCaseDiagram.htm) to represent a user's interaction with the system, showing the relationship between the user and the different use cases.
+As such, we now present the [use case diagram](http://www.agilemodeling.com/artifacts/useCaseDiagram.htm), between the (single) user, and the available commands.
 
 
 ![UseCaseDiagram](/ArchSW-docs/Diagrams/usecase.png)
