@@ -122,3 +122,5 @@ For this system, we'll use the [use case diagrams](http://www.agilemodeling.com/
 
 
 ![UseCaseDiagram](/ArchSW-docs/Diagrams/usecase.png)
+
+In this case, the use cases, or scenarios, are really simple. You have the user, who has acess to the shell, and from there, he can type "_fuck_", execute a command or exit. He can also configure the rules through the configure files. When the user types "_fuck_", the program prompt will appear and the user will choose if he wants to accept the suggested command, ask for more commands, or reject the commands suggested by the program. If the user chooses to accept the suggested command, the command will be executed.
