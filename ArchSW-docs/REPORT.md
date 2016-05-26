@@ -4,8 +4,8 @@
 **Contents**
 - [Description](#description)
 	- [Some use cases](#some-use-cases)
-- [Prerequisites](#prerequisites)
-- [Contributions](#contributions)
+	- [Prerequisites](#prerequisites)
+	- [Contributions](#contributions)
 - [Software Architecture](#software-architecture)
 	- [Logical View](#logical-view)
 	- [Process View](#process-view)
@@ -16,9 +16,9 @@
 
 
 ##Description
-_**The Fuck**_ is a handy tool that allow its users to easily understand what went wrong with their console command. Keeping it short and simple, what it does is show us some alternatives to our last terminal input, (tries to match a rule for the previous command, creates a new command using the matched rule and runs it), and allowing us to make our own rules also.
+_**The Fuck**_ is a handy tool that allows its users to easily understand what went wrong with their console command. Keeping it short and simple, what it does is show them some alternatives to our last terminal input, (tries to match a rule for the previous command, creates a new command using the matched rule and runs it), and allowing them to make their own rules also.
 
-This project was created on GitHub in April 2015 and in total there are over 70 contributors, although only three have been active during this year (2016). Its creator is Vladimir Yakovlev, whose nickname is "nvbn" which, along with two others, Martin Carton ("mcarton") and Pablo Aguiar ("scorphus") constitute the principal nucleus of the app development. According Vladimir Iakovlev, was inspired by a [@liamosaur](https://twitter.com/liamosaur/) [tweet](https://twitter.com/liamosaur/status/506975850596536320).
+This project was created on GitHub in April 2015 and in total there are over 70 contributors, although only three have been active during this year (2016). Its creator is Vladimir Yakovlev ("nvbn") along side two others, Martin Carton ("mcarton") and Pablo Aguiar ("scorphus") constitute the principal nucleus of the app development. According to its creator, this app was inspired by a [@liamosaur](https://twitter.com/liamosaur/) [tweet](https://twitter.com/liamosaur/status/506975850596536320).
 
 
 Let's take a look:
@@ -29,7 +29,7 @@ Let's take a look:
 </figure>
 <br>
 
-#### Some use cases:
+### Some use cases:
 ```bash
 user$ aptget install java
 aptget: command not found
@@ -37,47 +37,46 @@ user$ fuck
 apt-get install java
 ```
 
-## Prerequisites
+### Prerequisites
 This program requires Python with [pip](https://pypi.python.org/pypi/pip) installed. On UNIX, it's necessary to have `python-dev`. On Windows you may need a shell with alias support such as the `bash` shell from the [mingw](www.mingw.org).
 We recommend the [cmder](www.cmder.net) console emulator on Windows.
 
 
-## Contributions
-The creator of the app makes it possible for other people to contribute with new rules, new features, bug fixes, etc., to improve the app. These contributions result in a pull request, which is later analyzed and accepted or not by the project owner.
+### Contributions
+To improve the app, the creator makes it possible for other people to make contributions such as new rules, new features or bug fixes. These contributions are performed via pull requests, which are later analyzed and approved by the project owner.
 
 
 ## Software Architecture
-_**4+1 architectural view model**_ describes the architecture of software-intensive systems, based on the use of multiple views. The views are used to describe the viewpoint of different stakeholders, such as end-users, programmers, software managers, integrator and system engineer.
-There are 5 views, each is a set of specific objective  s of the project, according to the different stakeholders, **Logical View**, **Development View**, **Process View**, **Physical View** and **Scenarios**.
+_**4+1 architectural view model**_ describes the architecture of software-intensive systems, based on the use of multiple views. The views are used to describe the perspective of different stakeholders, such as end-users, programmers, software managers, integrators and system engineers.
+There are 5 views, each of them describing the expected behaviour of the system from the point of view of the different stakeholders: **Scenarios**, **Logical View**, **Development View**, **Process View** and **Physical View**.
 
 
 ### Logical View
 
-This view is designed to address the end user's concerns regarding the system's insurance of their functional requirements. As such, it provides a basis for understanding the structure and organization of the design of the system. The end result should be a mapping of the functionality in components that provide that functionality. 
+This view is designed to address the end user's concerns regarding the system's insurance of their functional requirements. As such, it provides a basis for understanding the structure and organization of the overall system. The end result should be a mapping of the functionality in components that provide that functionality. 
 
 ![LogicalDiagram](/ArchSW-docs/Diagrams/logical.png)
 
-When the user calls the program, after entering a broken command, _**The Fuck**_ initializes its settings and converts shell specific (broken) command (i.e. mistyped command) to shell agnostic version. The opposite process is made with _fixed command_.
-Then, corrector matches all enabled rules against shell agnostic command, generates a list of correct commands sorted by priority (similarity) and displays them with UI. The user can, at this point, choose one of the available corrected commands with arrow keys and approve selection with `enter`, or dismiss it with `Ctrl+C`.
+When the user calls the program, after entering a _broken command_ (i.e. mistyped command), _**The Fuck**_ initializes its settings and converts that shell specific (broken) command to its shell agnostic version (the reverse process is made with _fixed command_).
+Afterwards, the _corrector_ matches all enabled rules against the shell agnostic command, generates a list of correct commands sorted by priority (similarity) and displays them with _UI_. The user can, at this point, choose one of the available corrected commands with arrow keys and approve selection with `enter`, or dismiss it with `Ctrl+C`.
 
 ### Process View
 
-This view derives from the Logical view the concurrency and synchronization mechanisms underlying the software product. Has the objective to provide a basis for understanding the process organization of the system.
+This view derives from the Logical view the concurrency and synchronization mechanisms underlying the software product, having the objective to provide a basis for understanding the process organization of the system.
 
-The process view works with the dynamic aspects of the system, explains the system processes and how they communicate, and focuses on system runtime behavior. For this system, we'll use the [activity diagram](http://www.agilemodeling.com/artifacts/activityDiagram.htm) to show the data flow and control, from one activity to another, when executed from the client side (since this is the most relevant aspect of the system).
+The process view works with the dynamic aspects of the system, explains the system processes and how they communicate, and focuses on system runtime behavior. For this system, we'll use the [activity diagram](http://www.agilemodeling.com/artifacts/activityDiagram.htm) to show the data flow and control, from one activity to another, according to the user's view.
 
 ![ProcessDiagram](/ArchSW-docs/Diagrams/process.png)
 
-The behavior of _**The Fuck**_ is intuitive, and is described as follows. What it does is it basically detects a broken command and in whatever shell you are in (as long as it supports alias), a rule is matched, and then some command options are displayed to the user. The user only has to pick whichever it fits what he wants and there it is, the command is fixed.
+The behavior of _**The Fuck**_ is intuitive, and is described as follows. It detects a broken command and in whatever shell you are in (as long as it supports alias), a rule is matched, and then some command options are displayed to the user. The user only has to pick whichever it fits what he wants and there it is, the command is fixed.
 
 In more detail, the alias is loaded (it can be _fuck_ or it can be whatever the user wants), and then, whenever there is a broken command (invalid command), the user has the option of not doing anything about it, and try again, or it can type _fuck_  (or, as mentioned before, any other alias picked by the user), and the available options will be displayed to the user. The user can either pick one, or discard them. If he chooses to accept any of the commands, the command will be executed and he will be back in the shell prompt. If he doesn't accept any of the options displayed, nothing will happen and he will be back in the shell prompt.
 
-Also, since _**The Fuck**_ is a very configurable app, it allows the user to easily change a few settings parameters. And that's where **settings.py** comes in. For example, the user can change the list of enabled rules, disable the colored output, require confirmation before running new command (`True` by default), among others. 
-
+Furthermore, _**The Fuck**_ allows for user-specific configurations. This is made available using **settings.py**, which defines the list of enabled rules and other slight tweaks on the application functionality (such as disabling of colored output, or confirmation requirement for command executions).
 
 ### Development View
 
-This view, also known as **Implementation View**, illustrates a system from a programmer's perspective and focuses on configuration management and internal organization of the software components in the development environment. For this system, we'll use the [package diagram](http://www.agilemodeling.com/artifacts/packageDiagram.htm) below to describe the dependencies between the main components of the code.
+This view, also known as **Implementation View**, illustrates the system from a programmer's perspective and focuses on configuration management and internal organization of the software components in the development environment. For this system, we'll use the [package diagram](http://www.agilemodeling.com/artifacts/packageDiagram.htm) below to describe the dependencies between the main components of the code.
 
 ![DevelopmentDiagram](/ArchSW-docs/Diagrams/PackageDiagram.png)
 
@@ -103,15 +102,14 @@ The **Aux** package contains the following modules:
   - **_const.py_** - initializes through global variables the default options.
   - **_exceptions.py_** - displays an error message when the user enters a command that is not found.
 
+The relation between the packages is depicted by the diagram, as well as the direction of the relationship established.
 
 ### Physical View
 
-This view, also known as **Deployment View**, is concerned with the topology of software components on the physical layer, as well as the physical connections between them. Makes the mapping the software to the hardware.
-
-For this system, we'll use the [deployment diagram](http://www.agilemodeling.com/artifacts/deploymentDiagram.htm) to show what hardware components ("nodes") exist, what software components ("artifacts") run on each node, and how the different pieces are connected.
+This view, also known as **Deployment View**, is concerned with the topology of software components on the physical layer, as well as the physical connections between them. For this system, we'll use the [deployment diagram](http://www.agilemodeling.com/artifacts/deploymentDiagram.htm) to show what hardware components ("nodes") exist, what software components ("artifacts") run on each node, and how the different pieces are connected.
 
 
-To start _**The Fuck**_ the client only needs a computer carrier of any operating system is the prerequisite is only contain a `bash`. In this way, the interaction with `bash` gives rise to two "artifacts": the system through the user interface (`UI`) itself when it want/need can run the application, after having properly installed, and the corrector with the help of some rules already solves the problem posed by it.
+To start _**The Fuck**_, the client only needs a computer carrier of any operating system is the prerequisite is only contain a `bash`. In this way, the interaction with `bash` gives rise to two "artifacts": the system through the user interface (`UI`) itself when it want/need can run the application, after having properly installed, and the corrector with the help of some rules already solves the problem posed by it.
 
 
 ### Scenarios
@@ -121,5 +119,6 @@ The use cases or scenarios, as it is also known, connects all the views describe
 In this view we can analyze the sequences of interactions between objects (in this case the user), and between the different processes. It helps to identify architectural elements and illustrate and validate the architecture design. It also helps the architect during the architecture design.
 
 For this system, we'll use the [use case diagrams](http://www.agilemodeling.com/artifacts/useCaseDiagram.htm) to represent a user's interaction with the system, showing the relationship between the user and the different use cases.
+
 
 ![UseCaseDiagram](/ArchSW-docs/Diagrams/usecase.png)
