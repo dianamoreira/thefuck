@@ -68,9 +68,9 @@ The process view works with the dynamic aspects of the system, explains the syst
 
 ![ProcessDiagram](/ArchSW-docs/Diagrams/process.png)
 
-The behavior of _**The Fuck**_ is intuitive, and is described as follows. It detects a broken command and in whatever shell you are in (as long as it supports alias), a rule is matched, and then some command options are displayed to the user. The user only has to pick whichever it fits what he wants and there it is, the command is fixed.
+The behavior of _**The Fuck**_ is intuitive, and is described as follows. It detects a broken command, regardless of the shell in which it's being executed, and matches it with a set of rules. Then, several corrected commands are displayed to the user, allowing for the user to pick the one that translates his immediate request.
 
-In more detail, the alias is loaded (it can be _fuck_ or it can be whatever the user wants), and then, whenever there is a broken command (invalid command), the user has the option of not doing anything about it, and try again, or it can type _fuck_  (or, as mentioned before, any other alias picked by the user), and the available options will be displayed to the user. The user can either pick one, or discard them. If he chooses to accept any of the commands, the command will be executed and he will be back in the shell prompt. If he doesn't accept any of the options displayed, nothing will happen and he will be back in the shell prompt.
+In more detail, after the alias of _the fuck_ is loaded, if there is an invalid command, the user can call `fuck` (by default). This will provide the available suggestions, corresponding to possible corrections for the (broken) input command. Then, the user can either pick one of them, or cancel. If the user selects one of the provided options, it will be executed according to the underlying Shell running in the user's environment. If he doesn't accept any of the options displayed, nothing will happen, and he will be redirected to the original shell prompt.
 
 Furthermore, _**The Fuck**_ allows for user-specific configurations. This is made available using **settings.py**, which defines the list of enabled rules and other slight tweaks on the application functionality (such as disabling of colored output, or confirmation requirement for command executions).
 
@@ -123,4 +123,4 @@ For this system, we'll use the [use case diagrams](http://www.agilemodeling.com/
 
 ![UseCaseDiagram](/ArchSW-docs/Diagrams/usecase.png)
 
-In this case, the use cases, or scenarios, are really simple. You have the user, who has acess to the shell, and from there, he can type "_fuck_", execute a command or exit. He can also configure the rules through the configure files. When the user types "_fuck_", the program prompt will appear and the user will choose if he wants to accept the suggested command, ask for more commands, or reject the commands suggested by the program. If the user chooses to accept the suggested command, the command will be executed.
+In this case, the use cases, or scenarios, are really simple. You have the user, who has acess to the shell, and from there, he can type `fuck`, execute a command or exit. He can also configure the rules through the configure files. When the user types `fuck`, the program prompt will appear and the user will choose if he wants to accept the suggested command, ask for more commands, or reject the commands suggested by the program. If the user chooses to accept the suggested command, the command will be executed.
