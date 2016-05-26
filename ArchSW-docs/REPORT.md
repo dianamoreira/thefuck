@@ -120,4 +120,6 @@ The relation between the packages is depicted by the diagram, as well as the dir
 
 This view, also known as **Deployment View**, is concerned with the topology of software components on the physical layer, as well as the physical connections between them. For this system, we'll use the [deployment diagram](http://www.agilemodeling.com/artifacts/deploymentDiagram.htm) to show what hardware components ("nodes") exist, what software components ("artifacts") run on each node, and how the different pieces are connected.
 
+![DeploymentDiagram](/ArchSW-docs/Diagrams/DeploymentDiagram.png)
+
 To start  _**The Fuck**_, the client requires only a computer running an operative system following the specifications defined on the [prerequisites section](#prerequisites). As such, running  _**The Fuck**_ gives rise to two main "artifacts": the user interface (`UI`), interacting with the `rule corrector`.
