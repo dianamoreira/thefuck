@@ -51,6 +51,18 @@ _**4+1 architectural view model**_ describes the architecture of software-intens
 There are 5 views, each of them describing the expected behaviour of the system from the point of view of the different stakeholders: **Scenarios**, **Logical View**, **Development View**, **Process View** and **Physical View**.
 
 
+### Scenarios
+
+The scenarios, or use cases, describe the possible interactions between user and system (different processes). In particular, it allows for validating all the following system views, with respect to compliance regarding the proposed functionalities.
+
+As such, we now present the [use case diagram](http://www.agilemodeling.com/artifacts/useCaseDiagram.htm), between the (single) user, and the available commands.
+
+
+![UseCaseDiagram](/ArchSW-docs/Diagrams/usecase.png)
+
+In this case, the use cases, or scenarios, are really simple. You have the user, who has acess to the shell, and from there, he can type `fuck`, execute a command or exit. He can also configure the rules through the configure files. When the user types `fuck`, the program prompt will appear and the user will choose if he wants to accept the suggested command, ask for more commands, or reject the commands suggested by the program. If the user chooses to accept the suggested command, the command will be executed.
+
+
 ### Logical View
 
 This view is designed to address the end user's concerns regarding the system's insurance of their functional requirements. As such, it provides a basis for understanding the structure and organization of the overall system. The end result should be a mapping of the functionality in components that provide that functionality. 
@@ -109,15 +121,3 @@ The relation between the packages is depicted by the diagram, as well as the dir
 This view, also known as **Deployment View**, is concerned with the topology of software components on the physical layer, as well as the physical connections between them. For this system, we'll use the [deployment diagram](http://www.agilemodeling.com/artifacts/deploymentDiagram.htm) to show what hardware components ("nodes") exist, what software components ("artifacts") run on each node, and how the different pieces are connected.
 
 To start  _**The Fuck**_, the client requires only a computer running an operative system following the specifications defined on the [prerequisites section](#prerequisites). As such, running  _**The Fuck**_ gives rise to two main "artifacts": the user interface (`UI`), interacting with the `rule corrector`.
-
-
-### Scenarios
-
-The scenarios, or use cases, describe the possible interactions between user and system (different processes). In particular, it allows for validating all the following system views, with respect to compliance regarding the proposed functionalities.
-
-As such, we now present the [use case diagram](http://www.agilemodeling.com/artifacts/useCaseDiagram.htm), between the (single) user, and the available commands.
-
-
-![UseCaseDiagram](/ArchSW-docs/Diagrams/usecase.png)
-
-In this case, the use cases, or scenarios, are really simple. You have the user, who has acess to the shell, and from there, he can type `fuck`, execute a command or exit. He can also configure the rules through the configure files. When the user types `fuck`, the program prompt will appear and the user will choose if he wants to accept the suggested command, ask for more commands, or reject the commands suggested by the program. If the user chooses to accept the suggested command, the command will be executed.
