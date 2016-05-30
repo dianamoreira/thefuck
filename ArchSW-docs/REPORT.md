@@ -143,4 +143,12 @@ As a final note, we state that all the diagrams were developed by the respective
 
 #Contributions
 
-Regarding the contribution of each element to this report, the group believes that the work was equally distributed by the five elements, with the exception of Section X. This section, and all the work behind it, was entirely developed by Miguel Ferreira.
+Regarding the contribution of each element to this report, the group believes that the work was equally distributed by the five elements:
+
+- **Diana Moreira**
+- **Filipe Valente**
+- **Miguel Ferreira**
+- **Sara Pereira**
+- **Vanessa Silva**
+
+with the exception of Section X. This section, and all the work behind it, was entirely developed by Miguel Ferreira.
