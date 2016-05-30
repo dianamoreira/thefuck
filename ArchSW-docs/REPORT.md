@@ -7,11 +7,13 @@
 	- [Prerequisites](#prerequisites)
 	- [Contributions](#contributions)
 - [Software Architecture](#software-architecture)
+	- [Scenarios](#scenarios)
 	- [Logical View](#logical-view)
 	- [Process View](#process-view)
 	- [Development View](#development-view)
 	- [Physical View](#physical-view)
-	- [Scenarios](#scenarios)
+- [Discussion](#discussion)
+- [Contributions](#contributions)
 
 
 
@@ -65,7 +67,7 @@ In this case, the use cases, or scenarios, are really simple. You have the user,
 
 ### Logical View
 
-This view is designed to address the end user's concerns regarding the system's insurance of their functional requirements. As such, it provides a basis for understanding the structure and organization of the overall system. The end result should be a mapping of the functionality in components that provide that functionality. 
+This view is designed to address the end user's concerns regarding the system's insurance of their functional requirements. As such, it provides a basis for understanding the structure and organization of the overall system. The end result should be a mapping of the functionality in components that provide that functionality. For this system, we'll use the [component diagram](http://agilemodeling.com/artifacts/componentDiagram.htm) below:
 
 ![LogicalDiagram](/ArchSW-docs/Diagrams/logical.png)
 
@@ -123,3 +125,22 @@ This view, also known as **Deployment View**, is concerned with the topology of 
 ![DeploymentDiagram](/ArchSW-docs/Diagrams/DeploymentDiagram.png)
 
 To start  _**The Fuck**_, the client requires only a computer running an operative system following the specifications defined on the [prerequisites section](#prerequisites). As such, running  _**The Fuck**_ gives rise to two main "artifacts": the user interface (`UI`), interacting with the `rule corrector`.
+
+
+#Discussion
+
+There is a big gap between understanding what a program does, and understanding how a program works.  The difficulty in describing the behaviour of an application on various levels translates in the various diagrams presented above, and shows the importance of having a language to convey this knowledge. 
+
+Furthermore, this is also a practical method to objectively evaluate this software, with respect to user requirements (depicted as use cases), as we now detail:
+- The list of commands is consistent with the provided Logical View. 
+- The available commands can be mapped to the diagram of the Process View.
+- The computation provided by the components in the Development View diagram enable the functionalities required by the Use Cases.
+- The physical nodes described in the Physical View diagram are sufficient for realizing the application proposed in all previous diagrams.
+
+Taking this into account, we believe that the application is well designed and organized.
+
+As a final note, we state that all the diagrams were developed by the respective authors of the document (using reliable [documentation](https://github.com/nvbn/thefuck) of the Project) and not by the Project author himself. As such, we remind the reader that different interpretations can lead to different representations.
+
+#Contributions
+
+Regarding the contribution of each element to this report, the group believes that the work was equally distributed by the five elements, with the exception of Section X. This section, and all the work behind it, was entirely developed by Miguel Ferreira.
