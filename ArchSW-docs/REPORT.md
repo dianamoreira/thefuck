@@ -13,7 +13,7 @@
 	- [Development View](#development-view)
 	- [Physical View](#physical-view)
 - [Discussion](#discussion)
-- [Code Contribution: Makefile Rule](#code-contribution:-makefile-rule)
+- [Code Contribution: Makefile Rule](#code-contribution-makefile-rule)
 - [Contributions](#contributions-1)
 
 
