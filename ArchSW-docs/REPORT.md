@@ -141,6 +141,13 @@ Taking this into account, we believe that the application is well designed and o
 
 As a final note, we state that all the diagrams were developed by the respective authors of the document (using reliable [documentation](https://github.com/nvbn/thefuck) of the Project) and not by the Project author himself. As such, we remind the reader that different interpretations can lead to different representations.
 
+#Code Contribution: Makefile Rule
+We implemented a dynamic rule that, given a malformed/invalid make file invocation:
+
+- Parses the Makefile;
+- Retrieves it’s targets using regular expression matching;
+- Returns the most similarly named valid target.
+
 #Contributions
 
 Regarding the contribution of each element to this report, the group believes that the work was equally distributed by the five elements:
@@ -151,4 +158,4 @@ Regarding the contribution of each element to this report, the group believes th
 - **Sara Pereira**
 - **Vanessa Silva**
 
-with the exception of Section X. This section, and all the work behind it, was entirely developed by Miguel Ferreira.
+with the exception of the Makefile Rule code which was implemented by Miguel Ferreira.   
